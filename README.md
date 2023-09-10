@@ -41,6 +41,12 @@ All solutions produce the same test results.
 * The exception handling through middleware that redirects errors to the separate error view
 * Note that in case of too many requests to the NASA server you might get the "Too many requests" error 429. In that case the data is fetched from the local JSON file (a snapshot of the demo data from NASA on 2015-09-07).
 
+**Docker**
+
+After building the Docker image, you run it with
+
+`docker run -p 3000:3000 -d <my-node-app>`
+
 **Margin to improve**
 
 When the date interval is entered in the search engine, the search request that provides the new data does not handle correctly the search parameters (date interval) which are lost when the page is reloaded and reset to their default values.
