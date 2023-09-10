@@ -1,0 +1,41 @@
+#top {
+    padding: 15px 10px;
+    border-bottom: 2px grey solid;
+    background-color: #F0F0F0;
+}
+
+#top h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+#search {
+    padding: 15px 0 25px 0;
+    text-align: center;
+}
+
+#main-view td {
+    vertical-align: middle;
+}
+
+#detailsModal-details {
+    width: 100%;
+    height: 400px;
+}
+
+#error-container {
+    margin-top: 35px;
+    text-align: center;
+}
+
+#error-container a {
+    margin-top: 70px;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.modal-btn-x {
+    border: none;
+}
