@@ -61,10 +61,10 @@ submission_start = data[0][4] - timedelta(days=CONSECUTIVE_DAYS-1)
 # --------------------
 # Query 1 
 # --------------------
-# Solution design:
-#  - Filter by consecutive days
-#  - Select distinct (student_id, submission_date) rows 
-#  - Extract only those students whose submission count match CONSECUTIVE_DAYS
+# Steps:
+#   1. Filter by consecutive days
+#   2. Select distinct (student_id, submission_date) rows 
+#   3. Extract only those students whose submission count match CONSECUTIVE_DAYS
 data1 = list(set([(x[2], x[4]) for x in data if x[4] >= submission_start]))
 counter1 = Counter([x[0] for x in data1])
 count1 = 0
@@ -76,10 +76,10 @@ print(f'\nResult #1: {count1}')
 # --------------------
 # Query 2
 # --------------------
-# Solution design:
-#  - Filter by consecutive days AND grade > 0 
-#  - Select distinct (student_id, submission_date) rows 
-#  - Extract only those students whose submission count match CONSECUTIVE_DAYS
+# Steps:
+#   1. Filter by consecutive days AND grade > 0 
+#   2. Select distinct (student_id, submission_date) rows 
+#   3. Extract only those students whose submission count match CONSECUTIVE_DAYS
 data2 = list(set([(x[2], x[4]) for x in data if (x[4] >= submission_start and x[5] > 0)]))
 counter2 = Counter([x[0] for x in data2])
 count2 = 0
@@ -91,10 +91,10 @@ print(f'\nResult #1: {count2}')
 # --------------------
 # Query 3
 # --------------------
-# Solution design:
-#  - Filter by consecutive days (use already filtered data1)
-#  - Select distinct (student_id, submission_date) rows 
-#  - Extract only those students whose submission count match CONSECUTIVE_DAYS
+# Steps:
+#   1. Filter by consecutive days (use already filtered data1)
+#   2. Select distinct (student_id, submission_date) rows 
+#   3. Extract only those students whose submission count match CONSECUTIVE_DAYS
 data3 = [(x[2], x[4]) for x in data if (x[4] >= submission_start)]
 counter3 = Counter([x for x in data3])
 
@@ -128,7 +128,7 @@ print('------------------------------------')
 # --------------------
 # Query 4
 # --------------------
-# Solution design:
+# Steps:
 #   1. Calculate the total grade per (student_id, test_id) -> needed in the next step.
 #   2. Split data into 2 subsets:
 #      - invalid_submissions: all submissions per (student_id, test_id) are invalid (grade=0) 
